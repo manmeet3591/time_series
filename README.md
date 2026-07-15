@@ -19,5 +19,7 @@
 
     DST-DDPM: https://drive.google.com/file/d/1h5ZbRhqOKI05qSyVOiN8-FkIY7r93pwt/view
 
-    Try this: https://proceedings.neurips.cc/paper_files/paper/2025/file/eed25c037bc08afcbefab6f7a6b700e0-Paper-Conference.pdf
+    Try this Chronos RAG: https://proceedings.neurips.cc/paper_files/paper/2025/file/eed25c037bc08afcbefab6f7a6b700e0-Paper-Conference.pdf
+
+    Try this as well Flamingo timesfm: https://huggingface.co/PartAI/FlaMinGo-timesfm
 
