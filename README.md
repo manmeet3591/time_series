@@ -23,3 +23,5 @@
 
     Try this as well Flamingo timesfm: https://huggingface.co/PartAI/FlaMinGo-timesfm
 
+    Monash time series forecasting archive: https://arxiv.org/pdf/2105.06643
+
