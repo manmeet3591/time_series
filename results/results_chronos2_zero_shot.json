@@ -1,0 +1,84 @@
+{
+  "model": "Chronos-2 (amazon/chronos-2, chronos-forecasting==2.3.2)",
+  "paper": "Chronos-2: From Univariate to Universal Forecasting (arXiv:2510.15821)",
+  "venue": "arXiv 2025 (Amazon)",
+  "type": "zero-shot foundation",
+  "lookback": 512,
+  "horizon": 96,
+  "mse": 0.39472460746765137,
+  "mae": 0.3799560070037842,
+  "paper_mse": null,
+  "paper_mae": null,
+  "params": 119477664,
+  "train_or_infer_seconds": 23.43,
+  "stride": 1,
+  "n_windows": 2785,
+  "all_settings": {
+    "univariate_L512": {
+      "mse": 0.39472460746765137,
+      "mae": 0.3799560070037842,
+      "seconds": 23.43
+    },
+    "univariate_L96": {
+      "mse": 0.46842285990715027,
+      "mae": 0.4140012562274933,
+      "seconds": 3.88
+    },
+    "multivariate_L512": {
+      "mse": 0.37067511677742004,
+      "mae": 0.3751836121082306,
+      "seconds": 12.97
+    },
+    "multivariate_L96": {
+      "mse": 0.4235480725765228,
+      "mae": 0.3970075249671936,
+      "seconds": 6.9
+    },
+    "bolt_small_univariate_L512": {
+      "mse": 0.3929075598716736,
+      "mae": 0.3816224932670593,
+      "seconds": 25.61
+    }
+  },
+  "ot_only": {
+    "covariate_OT_L512": {
+      "mse": 0.056344471871852875,
+      "mae": 0.18097026646137238
+    },
+    "univariate_OT_L512": {
+      "mse": 0.05185231938958168,
+      "mae": 0.17291508615016937
+    },
+    "multivariate_OT_L512": {
+      "mse": 0.056344471871852875,
+      "mae": 0.18097028136253357
+    },
+    "covariate_OT_L96": {
+      "mse": 0.0594375841319561,
+      "mae": 0.18692705035209656
+    },
+    "univariate_OT_L96": {
+      "mse": 0.06539831310510635,
+      "mae": 0.1965598613023758
+    },
+    "multivariate_OT_L96": {
+      "mse": 0.0594375841319561,
+      "mae": 0.18692705035209656
+    }
+  },
+  "probabilistic": {
+    "univariate_L512": {
+      "coverage_10_90": 0.7760552919552022,
+      "pinball_q10_50_90": 0.12045706063508987
+    },
+    "multivariate_L512": {
+      "coverage_10_90": 0.7912354663588954,
+      "pinball_q10_50_90": 0.11934282630681992
+    },
+    "univariate_L96": {
+      "coverage_10_90": 0.7923815935710011,
+      "pinball_q10_50_90": 0.13754431903362274
+    }
+  },
+  "notes": "Zero-shot, no training. Main number = channel-independent univariate, L=512, median forecast. multivariate = 7 channels jointly as one group; covariate = OT target + 6 past-only covariates (OT metrics only). Paper reports no ETTh1 MSE/MAE (evaluates on fev-bench, GIFT-Eval, Chronos Bench II). Chronos-Bolt-small included as lighter baseline."
+}

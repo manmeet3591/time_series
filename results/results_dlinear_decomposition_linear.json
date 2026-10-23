@@ -1,0 +1,23 @@
+{
+  "model": "DLinear",
+  "paper": "Are Transformers Effective for Time Series Forecasting? (Zeng et al.)",
+  "venue": "AAAI 2023",
+  "type": "supervised",
+  "lookback": 96,
+  "horizon": 96,
+  "mse": 0.3832,
+  "mae": 0.3955,
+  "paper_mse": 0.386,
+  "paper_mae": 0.4,
+  "params": 18624,
+  "train_or_infer_seconds": 6.7,
+  "notes": "From-scratch DLinear (individual=False, MA kernel 25), Adam lr 0.005, bs 32, MSE loss, 10 epochs max, patience 3, lr halved each epoch (official etth1.sh / run_longExp.py). Test: all 2785 stride-1 windows. paper_mse/mae for L=96 are the iTransformer-paper/TSLib DLinear numbers; extra run with the DLinear paper's L=336: mse 0.3738, mae 0.3951 (paper 0.375/0.399).",
+  "extra": {
+    "lookback_336": {
+      "mse": 0.3738,
+      "mae": 0.3951,
+      "paper_mse": 0.375,
+      "paper_mae": 0.399
+    }
+  }
+}

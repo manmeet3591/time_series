@@ -1,0 +1,53 @@
+{
+  "model": "Sundial-base-128m (thuml/sundial-base-128m)",
+  "paper": "Sundial: A Family of Highly Capable Time Series Foundation Models (arXiv 2502.00816)",
+  "venue": "ICML 2025 (oral)",
+  "type": "zero-shot foundation",
+  "lookback": 512,
+  "horizon": 96,
+  "mse": 0.355298787355423,
+  "mae": 0.3830567002296448,
+  "paper_mse": 0.348,
+  "paper_mae": 0.385,
+  "params": 128329680,
+  "train_or_infer_seconds": 41.5,
+  "settings": {
+    "512": {
+      "lookback": 512,
+      "stride": 1,
+      "windows": 2785,
+      "series": 19495,
+      "mse": 0.355298787355423,
+      "mae": 0.3830567002296448,
+      "mse_median": 0.3587115705013275,
+      "mae_median": 0.3825678527355194,
+      "coverage80": 0.4355566598273061,
+      "seconds": 16.8
+    },
+    "96": {
+      "lookback": 96,
+      "stride": 1,
+      "windows": 2785,
+      "series": 19495,
+      "mse": 0.40559256076812744,
+      "mae": 0.3963867723941803,
+      "mse_median": 0.4087842106819153,
+      "mae_median": 0.3961294889450073,
+      "coverage80": 0.3989505856202445,
+      "seconds": 14.4
+    },
+    "2880": {
+      "lookback": 2880,
+      "stride": 4,
+      "windows": 697,
+      "series": 4879,
+      "mse": 0.3406969904899597,
+      "mae": 0.37846603989601135,
+      "mse_median": 0.3448200225830078,
+      "mae_median": 0.3782833516597748,
+      "coverage80": 0.43248061419689826,
+      "seconds": 10.3
+    }
+  },
+  "notes": "Zero-shot, channel-independent (7 univariate series per window), point forecast = mean of 20 flow-matching samples (50 Euler steps), revin=True. Strides: L=512: 1, L=96: 1, L=2880: 4. Paper number (0.348/0.385) is Sundial-Base ETTh1 H=96 with context 2880 (Table 9); horizon-avg 0.411/0.434. transformers==4.40.1 (remote code breaks on transformers 5.x), revision 3212e42564. infer seconds = sum over all settings on NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition."
+}

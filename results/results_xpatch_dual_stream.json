@@ -1,0 +1,15 @@
+{
+  "model": "xPatch",
+  "paper": "xPatch: Dual-Stream Time Series Forecasting with Exponential Seasonal-Trend Decomposition (arXiv:2412.17323)",
+  "venue": "AAAI 2025",
+  "type": "supervised",
+  "lookback": 96,
+  "horizon": 96,
+  "mse": 0.3788,
+  "mae": 0.3913,
+  "paper_mse": 0.376,
+  "paper_mae": 0.386,
+  "params": 143982,
+  "train_or_infer_seconds": 8.3,
+  "notes": "From-scratch re-implementation of the official code with the unified-setting hyper-parameters (xPatch_unified.sh): EMA alpha=0.3, patch 16/8, AdamW lr=5e-4, bs=2048, up to 100 epochs, patience 10, arctan-weighted L1 loss, sigmoid LR. Seed 2024. Paper number is Table 13 (unified lookback L=96); the paper's hyper-parameter-search setting (longer lookback) reports 0.354/0.379. Metrics over all 2785 stride-1 test windows; with the official drop_last test loader (2048 windows) MSE=0.3758 MAE=0.3870."
+}

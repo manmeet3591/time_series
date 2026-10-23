@@ -1,0 +1,15 @@
+{
+  "paper": "Tiny Time Mixers (TTMs): Fast Pre-trained Models for Enhanced Zero/Few-Shot Forecasting of Multivariate Time Series (arXiv:2401.03955)",
+  "venue": "NeurIPS 2024",
+  "horizon": 96,
+  "paper_mse": 0.364,
+  "paper_mae": null,
+  "params": 805280,
+  "model": "Granite TTM-r2 (few-shot 5%, decoder+head fine-tune)",
+  "type": "few-shot foundation",
+  "lookback": 512,
+  "mse": 0.3625754714012146,
+  "mae": 0.3893330991268158,
+  "train_or_infer_seconds": 0.76,
+  "notes": "5% of train windows (401, last), backbone frozen, 289,696 trainable params, AdamW+OneCycle lr 0.001, <= 10 epochs, early stop on val (patience 3), head_dropout 0.7. Paper TTM-B few-shot 5% 96: MSE 0.364."
+}

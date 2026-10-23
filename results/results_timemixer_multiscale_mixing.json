@@ -1,0 +1,15 @@
+{
+  "model": "TimeMixer",
+  "paper": "TimeMixer: Decomposable Multiscale Mixing for Time Series Forecasting (arXiv:2405.14616)",
+  "venue": "ICLR 2024",
+  "type": "supervised",
+  "lookback": 96,
+  "horizon": 96,
+  "mse": 0.3838,
+  "mae": 0.3994,
+  "paper_mse": 0.375,
+  "paper_mae": 0.4,
+  "params": 75497,
+  "train_or_infer_seconds": 9.2,
+  "notes": "From-scratch PyTorch re-implementation of kwuking/TimeMixer models/TimeMixer.py; hyperparameters from TimeMixer_ETTh1_unify.sh (e_layers=2, d_model=16, d_ff=32, 3 avg down-sampling layers x2, channel independence, moving_avg 25, lr=0.01 OneCycleLR pct_start 0.2, batch 128, 10 epochs, patience 10, timeF calendar features incl. the official x_mark.repeat ordering). Seed 2024, single run. Test on all 2785 stride-1 windows (official loader drops the last incomplete test batch)."
+}

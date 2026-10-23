@@ -1,0 +1,15 @@
+{
+  "paper": "Tiny Time Mixers (TTMs): Fast Pre-trained Models for Enhanced Zero/Few-Shot Forecasting of Multivariate Time Series (arXiv:2401.03955)",
+  "venue": "NeurIPS 2024",
+  "horizon": 96,
+  "paper_mse": 0.364,
+  "paper_mae": null,
+  "params": 805280,
+  "model": "Granite TTM-r2 (zero-shot)",
+  "type": "zero-shot foundation",
+  "lookback": 512,
+  "mse": 0.3628121018409729,
+  "mae": 0.3890305757522583,
+  "train_or_infer_seconds": 0.24,
+  "notes": "ibm-granite/granite-timeseries-ttm-r2 512-96 via get_model, granite-tsfm 0.3.11; channel-independent; stride 1 (2785 windows x 7 ch). Paper TTM-B zero-shot 96: MSE 0.364 (MAE not reported). Short-context variant (90-30-ft-r2.1 model, freq token 'h', rolled 4x, last 90 of 96 points): MSE 0.4305 / MAE 0.4204."
+}

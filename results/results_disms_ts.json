@@ -1,0 +1,108 @@
+{
+  "model": "DisMS-TS",
+  "paper": "DisMS-TS: Eliminating Redundant Multi-Scale Features for Time Series Classification (Liu et al.), arXiv:2507.04600",
+  "venue": "ACM Multimedia 2025",
+  "type": "classification",
+  "datasets": {
+    "ArticularyWordRecognition": {
+      "acc": 94.11,
+      "f1": 94.09,
+      "mcc": 0.9389,
+      "acc_std": 0.42,
+      "f1_std": 0.4,
+      "mcc_std": 0.0043,
+      "paper_acc": 98.27,
+      "paper_f1": 98.23,
+      "paper_mcc": 0.976,
+      "ablation_no_reg": {
+        "acc": 93.89,
+        "f1": 93.84,
+        "mcc": 0.9366
+      },
+      "per_seed": [
+        {
+          "acc": 93.6667,
+          "f1": 93.686,
+          "mcc": 0.9344,
+          "epochs": 100.0
+        },
+        {
+          "acc": 94.0,
+          "f1": 93.9503,
+          "mcc": 0.9378,
+          "epochs": 99.0
+        },
+        {
+          "acc": 94.6667,
+          "f1": 94.6293,
+          "mcc": 0.9446,
+          "epochs": 100.0
+        }
+      ]
+    },
+    "FingerMovements": {
+      "acc": 51.0,
+      "f1": 50.68,
+      "mcc": 0.0212,
+      "acc_std": 1.41,
+      "f1_std": 1.38,
+      "mcc_std": 0.0313,
+      "paper_acc": 61.0,
+      "paper_f1": 60.67,
+      "paper_mcc": 0.228,
+      "ablation_no_reg": {
+        "acc": 52.33,
+        "f1": 52.02,
+        "mcc": 0.0484
+      },
+      "per_seed": [
+        {
+          "acc": 50.0,
+          "f1": 49.4949,
+          "mcc": -0.0037,
+          "epochs": 34.0
+        },
+        {
+          "acc": 53.0,
+          "f1": 52.6162,
+          "mcc": 0.0653,
+          "epochs": 26.0
+        },
+        {
+          "acc": 50.0,
+          "f1": 49.9199,
+          "mcc": 0.002,
+          "epochs": 92.0
+        }
+      ]
+    }
+  },
+  "n_seeds": 3,
+  "seeds": [
+    2024,
+    2025,
+    2026
+  ],
+  "val_mode": "holdout",
+  "config": {
+    "S": 3,
+    "C": 128,
+    "D": 128,
+    "tau": 1.0,
+    "lam1": 0.1,
+    "lam2": 0.1,
+    "lr": 0.005,
+    "wd": 0.0005,
+    "batch_size": 256,
+    "epochs": 100,
+    "patience": 15
+  },
+  "params": {
+    "ArticularyWordRecognition": 821314,
+    "FingerMovements": 2065022
+  },
+  "train_or_infer_seconds": 25.4,
+  "notebook_seconds": 47.3,
+  "device": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+  "notes": "From-scratch PyTorch re-implementation following the official code (S=3, C=D=128, d=32, lambda1=lambda2=0.1, Adam 5e-3, ReduceLROnPlateau + early stopping on val loss). UEA predefined train/test splits; validation = stratified 20% of TRAIN; per-variable z-score with train stats; mean over 3 seeds (paper: 5 runs). paper_* = DisMS-TS row of Table 2. ablation_no_reg = same model with lambda1=lambda2=0."
+}

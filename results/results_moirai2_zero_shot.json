@@ -1,0 +1,15 @@
+{
+  "model": "Moirai 2.0-R-small (zero-shot)",
+  "paper": "Moirai 2.0: When Less Is More for Time Series Forecasting (arXiv:2511.11698)",
+  "venue": "arXiv 2025",
+  "type": "zero-shot foundation",
+  "lookback": 512,
+  "horizon": 96,
+  "mse": 0.3837866187095642,
+  "mae": 0.3803180158138275,
+  "paper_mse": null,
+  "paper_mae": null,
+  "params": 11387208,
+  "train_or_infer_seconds": 19.07,
+  "notes": "Salesforce/moirai-2.0-R-small via uni2ts 2.0.0 (installed --no-deps on torch 2.12.1+cu130); channel-independent univariate; median (q=0.5) forecast; stride 1 (2785 windows x 7 ch); 10-90% coverage 0.749. Paper reports only GIFT-Eval, no ETTh1 number."
+}

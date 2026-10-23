@@ -1,0 +1,15 @@
+{
+  "model": "iTransformer",
+  "paper": "iTransformer: Inverted Transformers Are Effective for Time Series Forecasting (Liu et al.)",
+  "venue": "ICLR 2024 (Spotlight)",
+  "type": "supervised",
+  "lookback": 96,
+  "horizon": 96,
+  "mse": 0.3886,
+  "mae": 0.4042,
+  "paper_mse": 0.386,
+  "paper_mae": 0.405,
+  "params": 841568,
+  "train_or_infer_seconds": 17.2,
+  "notes": "From-scratch iTransformer following thuml/iTransformer: e_layers=2, d_model=256, d_ff=256 (iTransformer_ETTh1.sh), n_heads=8, dropout=0.1, gelu, use_norm=True, 4 timeF calendar features as extra variate tokens; Adam lr 1e-4, bs 32, MSE loss, 10 epochs max, patience 3, lr halved each epoch. Test: all 2785 stride-1 windows."
+}

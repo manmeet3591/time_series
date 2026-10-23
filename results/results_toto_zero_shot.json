@@ -1,0 +1,28 @@
+{
+  "model": "Toto (Toto-Open-Base-1.0, 151M)",
+  "paper": "This Time is Different: An Observability Perspective on Time Series Foundation Models (arXiv:2505.14766)",
+  "venue": "arXiv preprint 2025 (Datadog)",
+  "type": "zero-shot foundation",
+  "lookback": 512,
+  "horizon": 96,
+  "mse": 0.4152548313140869,
+  "mae": 0.3937593400478363,
+  "paper_mse": 0.382,
+  "paper_mae": 0.381,
+  "params": 151306080,
+  "train_or_infer_seconds": 17.9,
+  "stride": 8,
+  "n_test_windows": 349,
+  "num_samples": 64,
+  "point_forecast": "median of samples",
+  "coverage_80": 0.7519784418065221,
+  "lookback_96": {
+    "mse": 0.5605559349060059,
+    "mae": 0.4619126617908478,
+    "coverage_80": 0.8102273502524219,
+    "infer_seconds": 26.0,
+    "n_test_windows": 349
+  },
+  "package": "toto-ts==0.2.0",
+  "notes": "All 7 channels forecast jointly (Toto is natively multivariate). Test windows stride 8 (not stride 1), 64 samples, point forecast = median, fp32, KV cache, SDPA attention. Paper number: stride 1, 256 samples, median, context length not stated for LSF."
+}
