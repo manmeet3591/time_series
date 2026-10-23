@@ -1,0 +1,33 @@
+{
+  "model": "CycleNet/MLP (primary); CycleNet/Linear also reported",
+  "paper": "CycleNet: Enhancing Time Series Forecasting through Modeling Periodic Patterns (arXiv 2409.18479)",
+  "venue": "NeurIPS 2024 (Spotlight)",
+  "type": "supervised",
+  "lookback": 96,
+  "horizon": 96,
+  "mse": 0.377870636234184,
+  "mae": 0.399394110886472,
+  "paper_mse": 0.375,
+  "paper_mae": 0.395,
+  "params": 99080,
+  "train_or_infer_seconds": 6.336103200912476,
+  "variants": {
+    "CycleNet/linear": {
+      "mse": 0.3814304515848081,
+      "mae": 0.3922516878827103,
+      "paper_mse": 0.378,
+      "paper_mae": 0.391,
+      "params": 9480,
+      "train_seconds": 3.4980921745300293
+    },
+    "CycleNet/mlp": {
+      "mse": 0.377870636234184,
+      "mae": 0.399394110886472,
+      "paper_mse": 0.375,
+      "paper_mae": 0.395,
+      "params": 99080,
+      "train_seconds": 2.8380110263824463
+    }
+  },
+  "notes": "From-scratch re-implementation of the official CycleNet (RCF, W=24, RevIN, channel-independent backbone). Official ETTh1 hyper-params: Adam, batch 256, lr 0.01 (Linear) / 0.005 (MLP, d_model 512), 30 epochs, patience 5, lradj type3. Single seed 2024 (paper averages 5 seeds). features=M, all 7 channels, stride-1 test (2785 windows)."
+}

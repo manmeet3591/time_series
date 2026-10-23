@@ -1,0 +1,15 @@
+{
+  "model": "TimesNet",
+  "paper": "TimesNet: Temporal 2D-Variation Modeling for General Time Series Analysis (arXiv:2210.02186)",
+  "venue": "ICLR 2023",
+  "type": "supervised",
+  "lookback": 96,
+  "horizon": 96,
+  "mse": 0.3986,
+  "mae": 0.4183,
+  "paper_mse": 0.384,
+  "paper_mae": 0.402,
+  "params": 605479,
+  "train_or_infer_seconds": 55.2,
+  "notes": "From-scratch PyTorch re-implementation of TSLib models/TimesNet.py; hyperparameters from TSLib TimesNet_ETTh1.sh (e_layers=2, d_model=16, d_ff=32, top_k=5, num_kernels=6, lr=1e-4, batch 32, 10 epochs, patience 3, lradj type1, timeF calendar features). Seed 2024, single run. Test on all 2785 stride-1 windows."
+}

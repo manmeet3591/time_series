@@ -1,0 +1,52 @@
+{
+  "model": "TimesFM 2.5 (200M, google/timesfm-2.5-200m-pytorch)",
+  "paper": "A decoder-only foundation model for time-series forecasting (Das et al.), arXiv 2310.10688",
+  "venue": "ICML 2024",
+  "type": "zero-shot foundation",
+  "lookback": 512,
+  "horizon": 96,
+  "mse": 0.3843627870082855,
+  "mae": 0.38213175535202026,
+  "paper_mse": null,
+  "paper_mae": 0.45,
+  "params": 231289280,
+  "train_or_infer_seconds": 30.82,
+  "mse_L96": 0.428895503282547,
+  "mae_L96": 0.40244144201278687,
+  "infer_seconds_L96": 10.79,
+  "coverage_10_90_L512": 0.7692709669145935,
+  "pinball_L512": 0.15129540475444178,
+  "xreg_OT_L512_stride24": [
+    {
+      "covariates": "none (TimesFM only)",
+      "mode": "-",
+      "MSE": 0.04964,
+      "MAE": 0.1675
+    },
+    {
+      "covariates": "calendar",
+      "mode": "xreg + timesfm",
+      "MSE": 0.05763,
+      "MAE": 0.18149
+    },
+    {
+      "covariates": "calendar",
+      "mode": "timesfm + xreg",
+      "MSE": 0.05244,
+      "MAE": 0.17398
+    },
+    {
+      "covariates": "oracle loads",
+      "mode": "xreg + timesfm",
+      "MSE": 0.048,
+      "MAE": 0.16553
+    },
+    {
+      "covariates": "oracle loads",
+      "mode": "timesfm + xreg",
+      "MSE": 0.05228,
+      "MAE": 0.17367
+    }
+  ],
+  "notes": "timesfm==3.0.2; channel-independent univariate forecasting; stride-1 test windows (2785 x 7 series); point = median; normalize_inputs, continuous quantile head, flip invariance, infer_is_positive=False. paper_mae is TimesFM 1.0 zero-shot ETTh1 H=96 MAE from arXiv 2310.10688 Table 5 (last test window only, L=512); the paper reports no MSE."
+}

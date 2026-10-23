@@ -1,0 +1,26 @@
+{
+  "model": "TimeXer",
+  "paper": "TimeXer: Empowering Transformers for Time Series Forecasting with Exogenous Variables (arXiv 2402.19072)",
+  "venue": "NeurIPS 2024",
+  "type": "supervised",
+  "lookback": 96,
+  "horizon": 96,
+  "mse": 0.3859040566791966,
+  "mae": 0.4020385543902817,
+  "paper_mse": 0.382,
+  "paper_mae": 0.403,
+  "params": 1782112,
+  "train_or_infer_seconds": 100.00725603103638,
+  "notes": "features=M, all 7 channels endogenous, exogenous tokens = 7 variates + 4 timeF calendar features (official M mode). Official ETTh1-96 config: d_model 256, d_ff 2048, e_layers 1, 8 heads, patch 16, batch 4, Adam 1e-4, type1 lr, 10 epochs, patience 3. Single seed 2024. Stride-1 test (2785 windows).",
+  "ms_setting": {
+    "target": "OT",
+    "exogenous": "HUFL,HULL,MUFL,MULL,LUFL,LULL + 4 calendar features",
+    "mse": 0.057083496057223876,
+    "mae": 0.18157401687010258,
+    "paper_mse": 0.057,
+    "paper_mae": 0.181,
+    "params": 5662816,
+    "train_seconds": 6.976071357727051,
+    "note": "metrics on OT only (scaled); not comparable to the 7-channel M numbers"
+  }
+}

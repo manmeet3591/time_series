@@ -1,0 +1,15 @@
+{
+  "model": "TiRex (35M, xLSTM/sLSTM, zero-shot)",
+  "paper": "TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning (arXiv:2505.23719)",
+  "venue": "NeurIPS 2025",
+  "type": "zero-shot foundation",
+  "lookback": 512,
+  "horizon": 96,
+  "mse": 0.3856409192085266,
+  "mae": 0.3792078197002411,
+  "paper_mse": null,
+  "paper_mae": null,
+  "params": 35291200,
+  "train_or_infer_seconds": 40.12,
+  "notes": "NX-AI/TiRex via tirex-ts 1.4.2, backend='torch' (pure-PyTorch sLSTM; custom CUDA kernels need compute capability >= 8.0, not available on T4); channel-independent univariate; median (q=0.5) forecast; max_accelerated_rollout_steps=3; stride 1 (2785 windows x 7 ch); 10-90% coverage 0.805; WQL 0.370; GPU NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition. Paper reports only GIFT-Eval / Chronos-ZS (MASE/CRPS), no ETTh1 MSE."
+}
